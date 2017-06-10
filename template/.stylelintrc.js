@@ -16,7 +16,7 @@ module.exports = {
     "color-hex-case": null,
     "color-hex-length": null,
     "max-empty-lines": 1,
-    "indentation": 4,
+    "indentation": 2,
     // 字符串使用双引号
     "string-quotes": "double",
     // 使用了 autoprefix 不需要前缀

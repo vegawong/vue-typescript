@@ -9,13 +9,13 @@ import svgicon = require('vue-svgicon')
 import 'components/icons'
 
 Vue.use(svgicon, {
-    tagName: 'icon'
+  tagName: 'icon'
 })
 
 new Vue({
-    el: '#app',
-    store,
-    router,
-    template: '<App/>',
-    components: { App }
+  el: '#app',
+  store,
+  router,
+  template: '<App/>',
+  components: { App }
 })

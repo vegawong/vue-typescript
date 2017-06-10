@@ -3,8 +3,8 @@ import { Component } from 'vue-property-decorator'
 import * as Template from './hello.vue'
 
 @Component({
-    mixins: [Template]
+  mixins: [Template]
 })
 export default class Hello extends Vue {
-    msg = 'Welcome to Your Vue.js App'
+  msg = 'Welcome to Your Vue.js App'
 }
