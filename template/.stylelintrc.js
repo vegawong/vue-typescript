@@ -26,14 +26,14 @@ module.exports = {
     "selector-pseudo-class-no-unknown": null,
     "number-leading-zero": null,
     // 属性顺序
-    "order/declaration-block-order": [
+    "order/order": [
       "dollar-variables",
       "custom-properties",
       "declarations",
       "rules",
       "at-rules"
     ],
-    "order/declaration-block-properties-specified-order": [
+    "order/properties-order": [
       "display",
       "float",
       "position",

@@ -38,7 +38,7 @@
     "vue-template-compiler": "^2.3.3",
     "stylelint": "^7.9.0",
     "stylelint-config-standard": "^16.0.0",
-    "stylelint-order": "^0.3.0",
+    "stylelint-order": "^0.5.0",
     "webpack": "^2.6.1",
     "typescript": "^2.3.2",
     "tslib": "^1.7.1",
