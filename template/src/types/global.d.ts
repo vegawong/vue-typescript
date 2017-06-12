@@ -9,3 +9,11 @@ declare module '*.vue' {
   let value: Vue.ComponentOptions<Vue>
   export = value
 }
+
+declare var process: {
+  env: {
+    NODE_ENV: string,
+    APP_ENV: string,
+    ENV_CONFIG: any
+  }
+}
