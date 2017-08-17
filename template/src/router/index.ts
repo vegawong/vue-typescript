@@ -1,28 +1,16 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+
+// routes
+import homeRoute from './home'
+import productRoute from './product'
+
 Vue.use(Router)
 
-let routes = []
-
-function addRoute(path: string, name: string, component: any) {
-  routes.push({
-    path: path,
-    name: name,
-    component: component
-  })
-  return addRoute
-}
-
-addRoute
-  (
-  '/(home)?', 'home',
-  (r) => require.ensure([], () => r(require('views/home')['default']), 'name')
-  )
-  (
-  '*', 'defaultView',
-  (r) => require.ensure([], () => r(require('views/home')['default']), 'name')
-  )
+let routes: Router.RouteConfig[] = []
 
 export default new Router({
   routes: routes
+    .concat(homeRoute)
+    .concat(productRoute)
 })

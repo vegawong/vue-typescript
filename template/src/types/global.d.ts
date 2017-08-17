@@ -1,19 +1,25 @@
-declare var require: {
-  <T>(path: string): T
-  (paths: string[], callback: (...modules: any[]) => void): void
-  ensure: (paths: string[], callback: (require: <T>(path: string) => T) => void, chunkName?: string) => void
+/**
+ * For module import or split code use require
+ */
+interface NodeRequire {
+  ensure(paths: string[], callback: (require) => void, chunkName?: string): void
+  ensure(paths: string[], callback: (require) => void, errorCallback?: (err) => void, chunkName?: string): void
+}
+
+/**
+ * md5
+ */
+declare module 'md5' {
+  const md5: (str: string) => string
+  export = md5
+}
+
+declare module 'env' {
+  import env from 'env/dev'
+  export default env
 }
 
 declare module '*.vue' {
-  import * as Vue from 'vue'
-  let value: Vue.ComponentOptions<Vue>
-  export = value
-}
-
-declare var process: {
-  env: {
-    NODE_ENV: string,
-    APP_ENV: string,
-    ENV_CONFIG: any
-  }
+  import Vue from 'vue'
+  export default Vue
 }

@@ -1,7 +1,7 @@
 import 'styles/app.scss'
 import Vue from 'vue'
 import store from 'store'
-import * as App from './App.vue'
+import App from './App.vue'
 import router from 'router'
 import svgicon = require('vue-svgicon')
 
@@ -16,6 +16,5 @@ new Vue({
   el: '#app',
   store,
   router,
-  template: '<App/>',
-  components: { App }
+  render: h => h(App)
 })

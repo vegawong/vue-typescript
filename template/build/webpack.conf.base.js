@@ -1,4 +1,5 @@
 var path = require('path')
+var webpack = require('webpack')
 var utils = require('./utils')
 var config = require('./config')
 var vueLoaderConfig = require('./vue-loader.conf')
@@ -6,6 +7,8 @@ var vueLoaderConfig = require('./vue-loader.conf')
 function resolve(dir) {
   return path.join(__dirname, '..', dir)
 }
+
+const env = process.env.APP_ENV || 'prod'
 
 module.exports = {
   entry: {
@@ -25,9 +28,10 @@ module.exports = {
       resolve('node_modules')
     ],
     alias: {
-      'vue$': 'vue/dist/vue.esm.js',
+      'vue$': 'vue/dist/vue.runtime.esm.js',
       'assets': resolve('src/assets'),
-      'md5': 'blueimp-md5'
+      'md5': 'blueimp-md5',
+      'env': resolve(`src/env/${env}`)
     }
   },
   module: {
@@ -61,5 +65,9 @@ module.exports = {
         }
       }
     ]
-  }
+  },
+  plugins: [
+     // 作用域提升，减少代码量，加快代码运行速度（webpack 3.0）
+     new webpack.optimize.ModuleConcatenationPlugin()
+  ]
 }

@@ -1,3 +1,5 @@
 test
 node_modules
 npm-debug*
+/dist
+/index.html

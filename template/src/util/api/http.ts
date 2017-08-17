@@ -1,6 +1,7 @@
 import axios from 'axios'
 import * as qs from 'qs'
 import { AxiosRequestConfig, HttpResquest } from 'types/interface'
+import env from 'env'
 
 enum HTTPERROR {
   LOGICERROR,
@@ -10,7 +11,7 @@ enum HTTPERROR {
 
 
 const DEFAULTCONFIG = {
-  baseURL: process.env.ENV_CONFIG.baseURL
+  baseURL: env.baseURL
 }
 
 
